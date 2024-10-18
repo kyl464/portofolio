@@ -1,3 +1,6 @@
+.body {
+  background: #706f8e;
+}
 .navbar {
   position: fixed;
   width: 100%;
@@ -5,18 +8,13 @@
   z-index: 999;
 }
 
-.navbar-color-gradient {
-  background: rgba(112, 111, 142); /* Gunakan RGBA untuk transparansi background */
-  /* Tambahkan shadow jika ingin menonjolkan navbar lebih jelas */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Opsional: untuk sedikit bayangan */
-}
-
 .jumbotron {
-  height: 100vh; /* Full viewport height */
-  display: flex;
+  margin-top: -60px;
+  padding-top: 100px; /* Adjust this based on your navbar height */
+  min-height: 100vh; /* Full viewport height */
   align-items: center; /* Vertically center content */
   justify-content: center; /* Horizontally center content */
-  background: linear-gradient(180deg, rgb(112, 111, 142) 0%, #706f8e 100%);
+  background: linear-gradient(180deg, #706f8e 0%, #706f8e 100%);
   overflow: hidden;
 }
 
@@ -41,7 +39,7 @@
 
 .abtme-color {
   background: linear-gradient(180deg, #706f8e 0%, #393a5a 100%);
-  padding: 5rem 0; /* Tambah ruang di atas dan bawah */
+
   min-height: 70vh; /* Minimum height lebih besar */
   justify-content: center;
   align-items: center;
