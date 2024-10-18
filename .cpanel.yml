@@ -4,4 +4,4 @@ deployment:
     - export DEPLOYPATH=/home/ioimnyza/public_html/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
-    - /bin/cp -R public $DEPLOYPATHS
+    - /bin/cp -R img $DEPLOYPATH
