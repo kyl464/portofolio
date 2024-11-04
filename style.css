@@ -8,6 +8,31 @@
   z-index: 999;
 }
 
+@media screen and (max-width: 991px) {
+  .hero-line {
+    margin-top: 184px;
+    position: relative;
+    bottom: auto;
+  }
+}
+.hero-line {
+  padding-top: 3rem;
+  width: 2px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  inset: auto 0% 60px;
+}
+
+.hero-line-v {
+  background-color: white;
+  width: 2px;
+  height: 80px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .jumbotron {
   margin-top: -60px;
   padding-top: 100px; /* Adjust this based on your navbar height */
@@ -26,6 +51,7 @@
   max-width: 100%;
   height: auto;
   display: inline;
+  padding-bottom: 3rem;
 }
 
 .jumbotron h1 {
@@ -39,7 +65,6 @@
 
 .abtme-color {
   background: linear-gradient(180deg, #706f8e 0%, #393a5a 100%);
-
   min-height: 70vh; /* Minimum height lebih besar */
   justify-content: center;
   align-items: center;
@@ -69,8 +94,8 @@
 }
 
 /* Kurangi jarak antar tombol */
-.d-flex.gap-1 {
-  gap: 5px; /* Atur jarak antar tombol agar lebih dekat */
+.bkm .bktm {
+  margin-bottom: 2.6rem;
 }
 
 /* Atur jarak antar kolom project */
