@@ -2,7 +2,9 @@ html.lenis,
 html.lenis body {
   height: auto;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 .lenis.lenis-smooth {
   scroll-behavior: auto !important;
 }
@@ -21,6 +23,7 @@ html.lenis body {
 
 .body {
   background: #706f8e;
+  font-family: Slussen;
 }
 .navbar {
   position: fixed;
@@ -55,7 +58,6 @@ html.lenis body {
 }
 
 .jumbotron {
-  margin-top: -60px;
   padding-top: 100px;
   min-height: 100vh;
   align-items: center;
@@ -100,13 +102,11 @@ html.lenis body {
 
 .project-color {
   background: linear-gradient(180deg, #393a5a 0%, #22222e 100%);
-  padding-top: 3rem;
 }
 
 #project-tittle {
   padding-bottom: 3rem;
 }
-
 .project-img {
   width: 200px;
   height: auto;
