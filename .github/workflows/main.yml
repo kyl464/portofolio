@@ -5,21 +5,28 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    # 1. Ambil kode terbaru dari repository
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
+      # 1. Get latest code from repository
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
 
-    # 2. Instal dependencies dan buat build
-    - name: 🔧 Install dependencies and build
-      run: |
-        npm install
-        npm run build
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
 
-    # 3. Sinkronkan hanya isi folder `build` ke server FTP
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: build
+      # 3. Install dependencies and build
+      - name: 🔧 Install dependencies and build
+        run: |
+          chmod +x node_modules/.bin/react-scripts  # Ensure react-scripts has execute permissions
+          npm install
+          npm run build
+
+      # 4. Sync only the build folder to FTP server
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: build
