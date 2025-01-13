@@ -1,4 +1,29 @@
-- name: 📂 Sync files
+on: push
+name: 🚀 Deploy website on push
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Get latest code from repository
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      # 2. Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      # 3. Install dependencies and build
+      - name: 🔧 Install dependencies and build
+        run: |
+          chmod +x node_modules/.bin/react-scripts  # Ensure react-scripts has execute permissions
+          npm install
+          npm run build
+
+      # 4. Sync only the build folder to FTP server
+      - name: 📂 Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
