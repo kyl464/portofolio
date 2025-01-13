@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 ---
 deployment:
   tasks:
     - export DEPLOYPATH=/home/ioimnyza/public_html/
     - /bin/cp index.html $DEPLOYPATH
     - /bin/cp style.css $DEPLOYPATH
+=======
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ioimnyza/public_html/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
+>>>>>>> 7391d1b22e2fad798f4767011df93d9b18c5480e
     - /bin/cp -R img $DEPLOYPATH
